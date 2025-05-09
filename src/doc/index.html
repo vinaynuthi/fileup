@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manpower - File Upload & Management</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f6f9;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px;
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+        a {
+            color: #1976d2;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #1976d2;
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 5px;
+            margin: 10px;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #1565c0;
+            text-decoration: none;
+        }
+        .instructions {
+            text-align: left;
+            background-color: #fafafa;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .instructions h2 {
+            font-size: 1.5em;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        .instructions ol {
+            padding-left: 20px;
+        }
+        .instructions li {
+            margin-bottom: 10px;
+        }
+        .footer {
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>File Upload & Management</h1>
+        <p>Welcome to <strong>File Up</strong>, a Spring Boot application for uploading, managing, and downloading files. This application supports tabular data (Excel, CSV) and non-tabular files (e.g., PDFs), with features to view, download, and delete files.</p>
+        
+        <p>This is a static landing page hosted on GitHub Pages. The application itself requires a server to run and cannot be fully hosted here.</p>
+
+        <a href="https://github.com/your-username/manpower" class="btn" target="_blank">View Source Code on GitHub</a>
+        <a href="http://localhost:8080/data/upload" class="btn" target="_blank">Upload</a>
+
+        <div class="instructions">
+            <h2>Run the Application Locally</h2>
+            <p>Follow these steps to run the Manpower application on your local machine:</p>
+            <ol>
+                <li><strong>Clone the Repository:</strong>
+                    <pre>git clone https://github.com/your-username/manpower.git</pre>
+                </li>
+                <li><strong>Navigate to the Project Directory:</strong>
+                    <pre>cd manpower</pre>
+                </li>
+                <li><strong>Build the Project:</strong>
+                    <pre>mvn clean install</pre>
+                </li>
+                <li><strong>Run the Application:</strong>
+                    <pre>mvn spring-boot:run</pre>
+                </li>
+            </ol>
+            <p>Once the application is running, use the "Access the App" button above to visit the app at <a href="http://localhost:8080/data/upload" target="_blank">http://localhost:8080/data/upload</a>.</p>
+            <p><strong>Requirements:</strong> Ensure you have Java 11+ and Maven installed on your system.</p>
+        </div>
+
+        <div class="footer">
+            © 2025 Manpower | Built with ❤️ using Spring Boot
+        </div>
+    </div>
+</body>
+</html>

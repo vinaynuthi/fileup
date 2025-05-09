@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Uploaded Files</title>
+    <link rel="icon" type="image/x-icon" th:href="@{/favicon.ico}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h2 {
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        a {
+            color: #5cb85c;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .delete {
+            color: #d9534f;
+        }
+        .delete:hover {
+            color: #c9302c;
+        }
+        .message {
+            color: green;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h2>Uploaded Files</h2>
+
+    <div th:if="${message}" class="message">
+        <p th:text="${message}"></p>
+    </div>
+    <div th:if="${error}" class="error">
+        <p th:text="${error}"></p>
+    </div>
+
+    <table th:if="${files}">
+        <thead>
+            <tr>
+                <th>File Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="file : ${files}">
+                <td th:text="${file.fileName}"></td>
+                <td>
+                    <a th:href="@{'/data/details/' + ${file.fileName}}">Details</a>
+                    <a th:href="@{'/data/view/' + ${file.fileName}}">View</a>
+                    <a th:href="@{'/data/delete/' + ${file.fileName}}" class="delete">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div th:unless="${files}">
+        <p>No files uploaded yet.</p>
+    </div>
+
+    <div style="margin-top: 20px;">
+        <a th:href="@{/data/upload}">Upload File</a> |
+        <a th:href="@{/data/delete}">Delete</a> |
+        <a th:href="@{/data/view}">View Data</a> |
+        <a th:href="@{/}">Home</a>
+    </div>
+</body>
+</html>

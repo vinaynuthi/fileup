@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>File Details</title>
+    <link rel="icon" type="image/x-icon" th:href="@{/favicon.ico}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h2 {
+            color: #333;
+        }
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .metadata {
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        a {
+            color: #5cb85c;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>File Details</h2>
+
+        <div th:if="${error}" class="error">
+            <p th:text="${error}"></p>
+        </div>
+
+        <div th:if="${metadata}" class="metadata">
+            <p><strong>ID:</strong> <span th:text="${metadata.id}"></span></p>
+            <p><strong>File Name:</strong> <span th:text="${metadata.fileName}"></span></p>
+            <p><strong>File Type:</strong> <span th:text="${metadata.fileType}"></span></p>
+            <p><strong>File Size:</strong> <span th:text="${metadata.fileSize} + ' bytes'"></span></p>
+            <p><strong>Upload Date:</strong> <span th:text="${metadata.uploadDate}"></span></p>
+            <p><strong>Base Name:</strong> <span th:text="${metadata.baseName}"></span></p>
+            <p><strong>Table Name:</strong> <span th:text="${metadata.tableName} ?: 'N/A'"></span></p>
+            <p><strong>Is Tabular:</strong> <span th:text="${metadata.isTabular}"></span></p>
+        </div>
+
+        <div style="margin-top: 20px;">
+            <a th:href="@{/data/upload}">Upload File</a> |
+            <a th:href="@{/data/delete}">Delete</a> |
+            <a th:href="@{/data/uploadedfiles}">View Uploaded Files</a> |
+            <a th:href="@{/data/view}">View Data</a> |
+            <a th:href="@{/}">Home</a>
+        </div>
+    </div>
+</body>
+</html>
